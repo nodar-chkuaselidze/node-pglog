@@ -11,5 +11,8 @@
     "url": "git@github.com:nodar-chkuaselidze/node-pglog.git"
   },
   "author": "Nodar Chkuaselidze",
-  "license": "-"
+  "license": "-",
+  "dependencies": {
+    "ncurses": "~0.4.1"
+  }
 }
