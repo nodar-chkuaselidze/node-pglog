@@ -1,0 +1,15 @@
+{
+  "name": "node-pglog",
+  "version": "0.1.0",
+  "description": "Logs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nodar-chkuaselidze/node-pglog.git"
+  },
+  "author": "Nodar Chkuaselidze",
+  "license": "-"
+}
