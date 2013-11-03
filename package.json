@@ -13,6 +13,6 @@
   "author": "Nodar Chkuaselidze",
   "license": "-",
   "dependencies": {
-    "ncurses": "~0.4.1"
+    "blessed": "0.0.25"
   }
 }
