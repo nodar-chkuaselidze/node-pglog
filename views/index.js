@@ -1,8 +1,9 @@
 'use strict';
 global.views = {};
 
-module.exports = function () {
-  var view_names = [];
+module.exports = (function () {
+  var view_names = [],
+      views_dir  = ROOT + '/views';
 
   fs.readdirSync(__dirname)
     .filter(function (e) { return !~e.indexOf('index.js'); })
@@ -11,8 +12,9 @@ module.exports = function () {
       view_names.push(view);
       var view_name = view.charAt(0).toUpperCase() + view.substring(1).toLowerCase();
 
-      views[view_name] = require(global.ROOT + view);
+      views[view_name] = require(views_dir + '/' + view);
     });
 
-  view_names.forEach(function (view) { require('./' + view).done(); });
-};
+  view_names.forEach(function (view) { require(views_dir + '/' + view); });
+  return view_names;
+}());

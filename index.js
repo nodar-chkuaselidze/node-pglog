@@ -1,11 +1,19 @@
 'use strict';
-var blessed = require('blessed'),
-    screen  = blessed.screen(),
-    models  = require('./models/'),
-    views   = require('./views/');
+global._ = require('underscore');
 
-global.screen = screen;
-global.ROOT   = __dirname;
+//load deps
+_.extend(global, {
+  'ROOT'    : __dirname,
+  'blessed' : require('blessed'),
+  'fs'      : require('fs'),
+});
+
+//load structure
+_.extend(global, {
+  'screen'  : blessed.screen(),
+  'models'  : require('./models/'),
+  'views'   : require('./views/')
+});
 
 screen.key(['C-c'], function(ch, key) {
   return process.exit(0);
