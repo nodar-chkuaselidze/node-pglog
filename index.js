@@ -15,6 +15,8 @@ _.extend(global, {
   'views'   : require('./views/')
 });
 
+global.curView = new views.Main();
+
 screen.key(['C-c'], function(ch, key) {
   return process.exit(0);
 });
