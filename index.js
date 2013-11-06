@@ -3,11 +3,11 @@ global._ = require('underscore');
 
 //load deps
 _.extend(global, {
-  'ROOT'    : __dirname,
-  'blessed' : require('blessed'),
-  'fs'      : require('fs'),
-  'events'  : require('events'),
-  'backbone': require('./lib/backbone')
+  'ROOT'     : __dirname,
+  'blessed'  : require('blessed'),
+  'fs'       : require('fs'),
+  'events'   : require('events'),
+  'Backbone' : require('./lib/backbone')
 });
 
 //load structure
