@@ -1,10 +1,14 @@
+'use strict';
 function Main() {
   var
-    mainBox = blessed.box({
-      width  : '100%',
-      height : '100%'
+    mainBox = blessed.Element({
+      width : '100%',
+      height: '100%'
     }),
-    header = new views.partials.Header();
+    header = new views.partials.Header(mainBox);
+
+  screen.append(mainBox);
+  screen.render();
 }
 
 module.exports = Main;

@@ -16,7 +16,7 @@ module.exports = function () {
 
       views[view_name] = require(views_dir + '/' + view);
     });
-  
+
   fs.readdirSync(partials_dir)
     .map(function (e) { return e.split('.')[0]; })
     .forEach(function (partial) {
