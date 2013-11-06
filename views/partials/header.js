@@ -12,8 +12,8 @@ function Header(parent) {
       }
     });
 
-  status.on('changed:text', function(text) {
-    headerBox.content = text;
+  status.on('change:text', function(text) {
+    headerBox.content = this.get('text');
     screen.render();
   });
   parent.append(headerBox);
