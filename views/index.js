@@ -25,6 +25,5 @@ module.exports = function () {
       views.partials[partial_name] = require(partials_dir + '/' + partial);
     })
 
-  console.log(ROOT);
   return global.views;
 };
