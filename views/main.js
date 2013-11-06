@@ -1,5 +1,3 @@
-var blessed = global.blessed;
-
 function Main() {
   var header = new views.Header();
 }
