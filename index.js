@@ -12,13 +12,13 @@ _.extend(global, {
 //load structure
 _.extend(global, {
   'screen'  : blessed.screen(),
-  'Model'   : require('./lib/model'),
-  'models'  : require('./models/')(),
-  'views'   : require('./views/')()
+  'Model'   : require('./lib/model')
 });
 
-//load view
+//load views and models
 _.extend(global, {
+  'models'  : require('./models/')(),
+  'views'   : require('./views/')(),
   'curView' : new views.Main()
 });
 
