@@ -6,7 +6,8 @@ _.extend(global, {
   'ROOT'    : __dirname,
   'blessed' : require('blessed'),
   'fs'      : require('fs'),
-  'events'  : require('events')
+  'events'  : require('events'),
+  'backbone': require('./lib/backbone')
 });
 
 //load structure
