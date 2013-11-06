@@ -11,8 +11,8 @@ _.extend(global, {
 //load structure
 _.extend(global, {
   'screen'  : blessed.screen(),
-  'models'  : require('./models/'),
-  'views'   : require('./views/')
+  'models'  : require('./models/')(),
+  'views'   : require('./views/')()
 });
 
 global.curView = new views.Main();
@@ -21,4 +21,4 @@ screen.key(['C-c'], function(ch, key) {
   return process.exit(0);
 });
 
-screen.render();
+//screen.render();
