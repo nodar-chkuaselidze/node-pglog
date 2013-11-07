@@ -1,3 +1,4 @@
+'use strict';
 var status = new models.Status();
 
 setTimeout(function() {
