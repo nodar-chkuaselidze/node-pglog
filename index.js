@@ -6,21 +6,24 @@ _.extend(global, {
   'ROOT'     : __dirname,
   'blessed'  : require('blessed'),
   'fs'       : require('fs'),
-  'events'   : require('events'),
   'Backbone' : require('./lib/backbone')
 });
 
-//load structure
+//load app globals
 _.extend(global, {
   'screen'  : blessed.screen(),
-  'Model'   : require('./lib/model')
+  'models'  : require('./models')()
 });
 
-//load views and models
+//load loadViews
 _.extend(global, {
-  'models'  : require('./models/')(),
-  'views'   : require('./views/')(),
-  'curView' : new views.Main()
+  'modelViews' : require('./modelViews/')()
+});
+
+//load views
+_.extend(global, {
+  'views'      : require('./views/')(),
+  'curView'    : new views.Main()
 });
 
 screen.key(['C-c'], function(ch, key) {

@@ -1,7 +1,7 @@
 'use strict';
 function Header(parent) {
   var 
-    status = models.Status,
+    status = modelViews.Status,
     headerBox = blessed.Element({
       width  : '100%',
       height : 7,
@@ -12,8 +12,8 @@ function Header(parent) {
       }
     });
 
-  status.on('change:text', function(text) {
-    headerBox.content = this.get('text');
+  status.on('change:text', function(event, value) {
+    headerBox.content = '' + value;
     screen.render();
   });
   parent.append(headerBox);

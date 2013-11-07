@@ -1,9 +1,9 @@
 'use strict';
+
 global.models = {};
 
 module.exports = function () {
-  var model_names = [],
-      models_dir  = ROOT + '/models';
+  var models_dir = ROOT + '/models';
 
   fs.readdirSync(models_dir)
     .filter(function (e) { return !~e.indexOf('index.js'); })
