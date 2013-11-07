@@ -17,7 +17,7 @@ _.extend(global, {
 
 //load loadViews
 _.extend(global, {
-  'modelViews' : require('./modelViews/')()
+  'controllers' : require('./controllers')()
 });
 
 //load views

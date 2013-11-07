@@ -1,7 +1,7 @@
 'use strict';
 function Header(parent) {
   var 
-    status = modelViews.Status,
+    status = controllers.Status,
     headerBox = blessed.Element({
       width  : '100%',
       height : 7,
