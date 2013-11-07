@@ -26,6 +26,7 @@ _.extend(global, {
   'curView'    : new views.Main()
 });
 
-screen.key(['C-c'], function(ch, key) {
+//end program keys
+screen.key(['C-c', 'q'], function(ch, key) {
   return process.exit(0);
 });
