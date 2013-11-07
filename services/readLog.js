@@ -1,4 +1,4 @@
 'use strict';
 
-var status = controllers.status,
-    logs   = controllers.logs;
+var status = models.status,
+    logs   = collections.logs;

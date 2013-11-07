@@ -9,12 +9,13 @@ _.extend(global, {
 });
 
 //load libs
-global.Backbone   = require('./lib/backbone');
-global.Models     = require('./lib/models')();
-global.Collection = require('./lib/collections')();
+global.Backbone    = require('./lib/backbone');
+global.Models      = require('./lib/models')();
+global.Collections = require('./lib/collections')();
 
 //load app globals
-global.models      = require('./lib/modelInstances');
+global.models      = require('./lib/modelInstances').models;
+global.collections = require('./lib/modelInstances').collections;
 global.controllers = require('./controllers')();
 
 //load views
