@@ -16,3 +16,5 @@ module.exports = function () {
 
   return controllers;
 };
+
+controllers.status = = new models.Status();
