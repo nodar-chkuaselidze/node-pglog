@@ -21,10 +21,7 @@ function Header(parent) {
     }),
     processStatus = blessed.Element({
       width : '50%',
-      right : 0,
-      style : {
-        fg : 'blue'
-      }
+      right : 0
     }),
     processTextElem = blessed.Element({
       width  : '100%',
