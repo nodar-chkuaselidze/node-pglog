@@ -1,21 +1,49 @@
 'use strict';
 function Header(parent) {
   var 
-    status = models.Status,
+    status    = models.Status,
+    pgProcess = status.get('pgProcess'),
     headerBox = blessed.Element({
       width  : '100%',
       height : 7,
-      content: status.get('text'),
       style  : {
         bg : '#111',
         fg : '#fff'
       }
-    });
+    }),
+    queriesStatus = blessed.Element({
+      width : '50%',
+      align : 'left', 
+      style : {
+        bg : 'blue',
+        fg : 'green'
+      }
+    }),
+    processStatus = blessed.Element({
+      width : '50%',
+      right : 0,
+      style : {
+        fg : 'blue'
+      }
+    }),
+    processTextElem = blessed.Element({
+      width  : '100%',
+      valign : 'middle',
+      left   : 5,
+      tags   : 'true'
+    }),
+    processText = 
+      'PG Process \n' +
+      '   CPU: %s \n' +
+      '   MEM: %s \n';
 
-  status.on('change:text', function(event, value) {
-    headerBox.content = '' + value;
-    screen.render();
-  });
+  processTextElem.content = util.format(processText, pgProcess.get('CPU'), pgProcess.get('MEM'));
+
+  processStatus.append(processTextElem);
+
+  headerBox.append(queriesStatus);
+  headerBox.append(processStatus);
+
   parent.append(headerBox);
 }
 

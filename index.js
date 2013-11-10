@@ -5,6 +5,7 @@ global._ = require('underscore');
 _.extend(global, {
   'ROOT'     : __dirname,
   'blessed'  : require('blessed'),
+  'util'     : require('util'),
   'fs'       : require('fs'),
 });
 
