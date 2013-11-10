@@ -14,6 +14,8 @@ global.Backbone    = require('./lib/backbone');
 global.Models      = require('./lib/models')();
 global.Collections = require('./lib/collections')();
 
+global.Services    = require('./services');
+
 //load app globals
 global.models      = require('./lib/modelInstances').models;
 global.collections = require('./lib/modelInstances').collections;
