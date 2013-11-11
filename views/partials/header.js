@@ -31,10 +31,21 @@ function Header(parent) {
     }),
     processText = 
       'PG Process \n' +
-      '   CPU: %s \n' +
-      '   MEM: %s \n';
+      '   CPU : %s%% \n' +
+      '   MEM : %s%% \n' +
+      '   RMEM: %sMB \n';
 
   processTextElem.content = util.format(processText, pgProcess.get('CPU'), pgProcess.get('MEM'));
+
+  pgProcess.on('change', function(process) {
+    processTextElem.content = util.format(processText,
+                                            process.get('%CPU'),
+                                            process.get('%MEM'),
+                                            process.get('RSS') / 1024
+    );
+
+    screen.render();
+  });
 
   processStatus.append(processTextElem);
 
