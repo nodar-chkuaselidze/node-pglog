@@ -1,4 +1,6 @@
 'use strict';
+var format = require(ROOT + '/helpers/format.js');
+
 function Header(parent) {
   var 
     status    = models.Status,
@@ -33,7 +35,7 @@ function Header(parent) {
       'PG Process \n' +
       '   CPU : %s%% \n' +
       '   MEM : %s%% \n' +
-      '   RMEM: %sMB \n';
+      '   RMEM: %s \n';
 
   processTextElem.content = util.format(processText, pgProcess.get('CPU'), pgProcess.get('MEM'));
 
@@ -41,7 +43,7 @@ function Header(parent) {
     processTextElem.content = util.format(processText,
                                             process.get('%CPU'),
                                             process.get('%MEM'),
-                                            process.get('RSS') / 1024
+                                            format.size(process.get('RSS'), 'KB')
     );
 
     screen.render();
