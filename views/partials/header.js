@@ -32,10 +32,10 @@ function Header(parent) {
       tags   : 'true'
     }),
     processText = 
-      'PG Process \n' +
+      '{#00ffff-fg}{bold}PG Process{/bold}\n' +
       '   CPU : %s%% \n' +
       '   MEM : %s%% \n' +
-      '   RMEM: %s \n';
+      '   RMEM: %s \n{/#00ffff-fg}';
 
   processTextElem.content = util.format(processText, pgProcess.get('CPU'), pgProcess.get('MEM'));
 
