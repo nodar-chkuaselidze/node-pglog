@@ -4,6 +4,8 @@ global._ = require('underscore');
 //load deps
 _.extend(global, {
   'ROOT'     : __dirname,
+  'nconf'    : require('nconf'),
+  'PGDATA'   : '/usr/local/var/postgres',
   '_'        : require('underscore'),
   'blessed'  : require('blessed'),
   'events'   : require('events'),
@@ -11,6 +13,8 @@ _.extend(global, {
   'util'     : require('util'),
   'fs'       : require('fs'),
 });
+
+nconf.argv().env().file({ file : ROOT + '/configs/main.json' });
 
 //load libs
 global.Backbone    = require('./lib/backbone');

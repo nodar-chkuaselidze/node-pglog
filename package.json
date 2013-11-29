@@ -14,6 +14,7 @@
   "license": "-",
   "dependencies": {
     "blessed": "0.0.25",
-    "underscore": "~1.5.2"
+    "underscore": "~1.5.2",
+    "nconf": "~0.6.8"
   }
 }

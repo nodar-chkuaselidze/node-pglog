@@ -1,0 +1,5 @@
+{
+  "PGDATA"  : "/usr/local/var/postgres",
+  "DB_NAME" : "uprise-dev",
+  "LOGDIR"  : "pg_log"
+}
