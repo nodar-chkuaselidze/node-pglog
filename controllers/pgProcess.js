@@ -1,6 +1,7 @@
 'use strict';
 
-var pidFile   = '/usr/local/var/postgres/postmaster.pid',
+var PGDATA    = nconf.get('PGDATA'),
+    pidFile   = PGDATA + '/postmaster.pid',
     pgProcess = new services.Pgprocess(pidFile, 1000);
 
 pgProcess.start();

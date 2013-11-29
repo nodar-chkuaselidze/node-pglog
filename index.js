@@ -5,7 +5,6 @@ global._ = require('underscore');
 _.extend(global, {
   ROOT    : __dirname,
   nconf   : require('nconf'),
-  PGDATA  : '/usr/local/var/postgres',
   _       : require('underscore'),
   blessed : require('blessed'),
   events  : require('events'),
